@@ -10,7 +10,7 @@ function Home() {
         <div className="home-container">
            <img className='home-image' src={scrollImg1} alt="" />
            <div className="home-row">
-            <Product rating={3}/>
+            <Product title="Alexa your virtual Assistant" id={1} rating={3} price={29.45} image="https://m.media-amazon.com/images/I/61MbLLagiVL._AC_UY327_FMwebp_QL65_.jpg"/>
             <Product/>
            </div>
            <div className="home-row">
