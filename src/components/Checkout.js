@@ -6,6 +6,7 @@ import {useStateValue} from "../contexts/StateProvider"
 
 function Checkout() {
   const [state,dispatch]=useStateValue()
+  console.log("state",state)
   return (
     <div className="checkout">
         <div className="checkout-left">
@@ -14,7 +15,7 @@ function Checkout() {
                 <h2 className="checkout-title">
                     Your Shoping Cart
                 </h2>
-               {state?.cart.map((item)=>{
+               {state.cart.length>0?state.cart.map((item)=>{
                 return <CheckoutProduct
                  id={item.id}
                  image={item.image}
@@ -22,7 +23,7 @@ function Checkout() {
                  price={item.price}
                  rating={item.rating}
                  />
-               })}
+               }):<p style={{color:"green"}}>Your Cart is Empty</p>}
             </div>
         </div>
         <div className="checkout-right">
