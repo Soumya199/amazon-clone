@@ -57,6 +57,8 @@ function PaymentCheckout() {
         created:payload.paymentIntent.created
       });
 
+      //......................................
+
       setsucceeded(true);
       seterror(null)
       setprocessing(false)
