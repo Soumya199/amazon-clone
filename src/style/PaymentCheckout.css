@@ -1,0 +1,27 @@
+.payment-checkout{
+    background-color: white;
+
+}
+
+.payment-checkout-container h1{
+    text-align:center;
+    padding: 10px;
+    font-weight: 400;
+    background-color: rgb(234, 237, 237);
+    border-bottom: 1px solid lightgray;
+}
+
+.payment-checkout-section{
+    display: flex;
+    padding: 20px;
+    margin: 0 20px;
+    border-bottom:1px solid lightgray ;
+}
+
+.payment-checkout-title{
+    flex:0.2;
+}
+
+.payment-checkout-address,.payment-checkout-item,.payment-checkout-details{
+    flex: 0.8;
+}
