@@ -50,6 +50,9 @@ function PaymentCheckout() {
       setsucceeded(true);
       seterror(null)
       setprocessing(false)
+      dispatch({
+        type:"CLEAR_CART"
+      })
       navigate("/orders")
     }
   }

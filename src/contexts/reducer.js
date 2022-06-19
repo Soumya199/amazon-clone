@@ -22,6 +22,7 @@ export const reducer = (state, action) => {
       }
 
       return {
+        ...state,
         cart: newCart,
       };
 
@@ -30,6 +31,12 @@ export const reducer = (state, action) => {
             ...state,
             user:action.user
         }
+
+        case "CLEAR_CART":
+          return{
+            ...state,
+            cart:[]
+          }
         
 
     default:
