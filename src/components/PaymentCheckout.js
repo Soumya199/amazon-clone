@@ -6,6 +6,8 @@ import "../style/PaymentCheckout.css"
 import {useStripe, useElements,CardElement} from '@stripe/react-stripe-js';
 import {getCartTotal} from "../contexts/reducer"
 import axios from './axios'
+import { db } from '../firebase'
+import { collection, addDoc,setDoc,doc } from "firebase/firestore"; 
 
 
 
@@ -47,6 +49,14 @@ function PaymentCheckout() {
     })
     console.log(payload,"payload");
     if(payload.paymentIntent){
+       // POST  order details to firestore db
+       console.log(state.user);
+       const data = await setDoc(doc(db, "users", state.user.uid,"orders",payload.paymentIntent.id), {
+        cart:state.cart,
+        amount:payload.paymentIntent.amount,
+        created:payload.paymentIntent.created
+      });
+
       setsucceeded(true);
       seterror(null)
       setprocessing(false)

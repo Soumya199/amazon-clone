@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword} from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -16,4 +17,5 @@ const firebaseConfig = {
   const auth = getAuth(firebaseApp);
   export const createUser=createUserWithEmailAndPassword;
   export const AuthenticateUser=signInWithEmailAndPassword;
+  export const db = getFirestore(firebaseApp);
   export default auth;

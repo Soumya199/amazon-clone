@@ -10,6 +10,7 @@ import auth from './firebase';
 import PaymentCheckout from './components/PaymentCheckout';
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
+import Orders from './components/Orders';
 
 function App() {
   const [state,dispatch]=useStateValue()
@@ -48,6 +49,7 @@ function App() {
         <Route path='/payment' element={<Elements stripe={stripePromise}><PaymentCheckout/></Elements>}/> 
         <Route path='/checkout' element={<><Checkout/></>}/> {/*we can also render multiple component by wrapping*/} 
         <Route path='/login' element={<Login/>}/>
+        <Route path='/orders' element={<Orders/>}/>
       </Routes>
     </Router>
   );
